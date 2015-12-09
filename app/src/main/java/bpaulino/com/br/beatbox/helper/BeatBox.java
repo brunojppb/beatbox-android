@@ -17,6 +17,8 @@ public class BeatBox {
 
     private static final String TAG = "BeatBox";
     private static final String SOUND_FOLDER = "sample_sounds";
+    private static final int MAX_SOUNDS = 5;
+
     private AssetManager mAssets;
     private List<Sound> mSounds;
 

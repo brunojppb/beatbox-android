@@ -7,6 +7,7 @@ public class Sound {
 
     private String mAssetPath;
     private String mName;
+    private Integer mSoundId;
 
     public Sound(String assetPath) {
         mAssetPath = assetPath;
@@ -19,15 +20,13 @@ public class Sound {
         return mAssetPath;
     }
 
-    public void setAssetPath(String assetPath) {
-        mAssetPath = assetPath;
-    }
+    public void setAssetPath(String assetPath) { mAssetPath = assetPath; }
 
-    public String getName() {
-        return mName;
-    }
+    public String getName() { return mName; }
 
-    public void setName(String name) {
-        mName = name;
-    }
+    public void setName(String name) { mName = name; }
+
+    public Integer getSoundId() { return mSoundId; }
+
+    public void setSoundId(Integer soundId) { mSoundId = soundId; }
 }

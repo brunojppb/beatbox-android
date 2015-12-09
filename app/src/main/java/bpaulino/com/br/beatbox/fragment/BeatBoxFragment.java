@@ -32,6 +32,13 @@ public class BeatBoxFragment extends Fragment {
     // =============================================================================================
     // Lifecycle methods
     // =============================================================================================
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+        mBeatBox = new BeatBox(getActivity());
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,12 +54,18 @@ public class BeatBoxFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mBeatBox.release();
+    }
+
     // =============================================================================================
-    // Private classes
+    // Private classes for Recyclerview
     // =============================================================================================
 
     //View holder for the content of the Recyclerview
-    private class SoundHolder extends RecyclerView.ViewHolder {
+    private class SoundHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private Button mButton;
         private Sound mSound;
@@ -65,6 +78,15 @@ public class BeatBoxFragment extends Fragment {
         public void bindSound(Sound sound) {
             mSound = sound;
             mButton.setText(mSound.getName());
+            mButton.setOnClickListener(this);
+        }
+
+        // OnClickListener Interface methods
+
+
+        @Override
+        public void onClick(View v) {
+            mBeatBox.playSound(mSound);
         }
     }
 

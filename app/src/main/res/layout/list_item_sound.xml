@@ -5,8 +5,7 @@
     android:id="@+id/list_item_sound_button"
     android:layout_width="match_parent"
     android:layout_height="120dp"
-    tools:text="Sound Name"
-    style="@style/BeatBoxButton.Strong">
+    tools:text="Sound Name">
 
 
 </Button>

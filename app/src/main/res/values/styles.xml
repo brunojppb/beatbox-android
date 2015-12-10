@@ -20,7 +20,7 @@
     <!-- CUSTOM STYLE-->
     
     <style name="BeatBoxButton" parent="android:style/Widget.Holo.Button">
-        <item name="android:background">@drawable/button_beatbox_normal</item>
+        <item name="android:background">@drawable/button_beat_box</item>
     </style>
 
 
